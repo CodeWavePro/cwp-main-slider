@@ -30,11 +30,6 @@ switch ( $atts['is_overlay'] ) {
 		$overlay_color = ( isset( $atts['overlay_color'] ) && $atts['overlay_color'] ) ? $atts['overlay_color'] : '#000';
 		$overlay_opacity = ( isset( $atts['overlay_opacity'] ) && $atts['overlay_opacity'] ) ? $atts['overlay_opacity'] : 0.5;
 		break;
-
-	case fasle:
-		$overlay_color = 'transparent';
-		$overlay_opacity = 0;
-		break;
 	
 	default:
 		$overlay_color = 'transparent';
