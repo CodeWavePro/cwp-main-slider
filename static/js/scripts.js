@@ -9,7 +9,7 @@ jQuery( function( $ ) {
 		 * Owl Slider.
 		 */
 		if ( $( 'div' ).hasClass( 'cwp-slider' ) ) {
-			var owl = $( '.owl-carousel' );
+			var owl = $( '.cwp-slider' );
 			var sliderItems = parseInt( owl.attr( 'data-slides' ) );
 			var sliderTimer = parseInt( owl.attr( 'data-timer' ) );
 			var sliderEffect = owl.attr( 'data-effect' );
@@ -29,6 +29,17 @@ jQuery( function( $ ) {
 		    } );
 		}
 
+	} );
+
+	/**
+	 * When window scrolled.
+	 */
+	$( window ).on( 'scroll', function() {
+		var st = $( this ).scrollTop();
+
+		if ( $( 'div' ).hasClass( 'cwp-slider' ) ) {
+			$( '.cwp-slider .cwp-slide' ).css( 'background-position', 'center ' + ( st / 7 ) + 'px' );
+		}
 	} );
 
 } );
