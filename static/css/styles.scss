@@ -12,11 +12,11 @@ $white: #f9f9f9;
     &.owl-theme {
         .owl-nav {
             margin-top: 0;
-            width: 1170px;
+            width: 1140px;
             position: absolute;
             bottom: 100px;
             left: 50%;
-            margin-left: -585px;
+            margin-left: -570px;
             text-align: left;
 
             .owl-prev,
@@ -46,11 +46,16 @@ $white: #f9f9f9;
             height: inherit
         }
     }
-}
 
-.cwp-slide {
-    height: inherit;
-    background-size: cover
+    .cwp-slide {
+        height: inherit;
+        background-size: cover;
+        background-position: center top;
+
+        .fw-col-xs-12 {
+            padding: 0 15px
+        }
+    }
 }
 
 .cwp-slide-text {
