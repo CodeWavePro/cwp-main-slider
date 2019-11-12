@@ -202,7 +202,7 @@ $text: #323232;
 
         &.owl-theme {
             .owl-nav {
-                bottom: 100px;
+                bottom: 50px;
                 width: 100%;
                 margin-left: 0;
                 left: 0;
@@ -212,7 +212,7 @@ $text: #323232;
     }
 
     .cwp-slide-text {
-        top: 300px
+        top: 250px
     }
 
     .cwp-slide-text__header {
@@ -230,6 +230,7 @@ $text: #323232;
     }
 
     .cwp-slide-image-wrapper {
+        top: 150px;
         right: 30px;
         width: 350px
     }
