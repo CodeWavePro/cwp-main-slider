@@ -6,6 +6,7 @@ jQuery( function( $ ) {
 	$( document ).ready( function() {
 
 		var owl, sliderItems, sliderTimer, sliderEffect, isAutoplay;
+		var scene, parallax;
 
 		/*
 		 * Owl Slider.

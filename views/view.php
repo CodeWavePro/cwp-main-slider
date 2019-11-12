@@ -59,7 +59,7 @@ if ( isset( $atts['slider'] ) && $atts['slider'] ) {
 				<div class = "fw-container">
 					<div class = "fw-row">
 						<div class = "fw-col-xs-12">
-							<div class = "cwp-slide-image-wrapper">
+							<div class = "cwp-slide-image-wrapper" data-depth = "0.2">
 								<img class = "cwp-slide__image animated" src = "<?php esc_attr_e( $image ) ?>" />
 							</div>
 
