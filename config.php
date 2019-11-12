@@ -5,8 +5,8 @@
 $cfg = array();
 
 $cfg['page_builder'] = array(
-	'title'			=> __( 'CWP-Slider', 'fw' ),
+	'title'			=> __( 'CWP Main Slider', 'fw' ),
 	'description'	=> __( 'Add Main Section slider with settings.', 'fw' ),
-	'tab'			=> __( 'Media Elements', 'fw' ),
+	'tab'			=> __( 'Content Elements', 'fw' ),
 	'icon' 			=> 'dashicons dashicons-format-gallery'
 );

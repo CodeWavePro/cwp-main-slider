@@ -45,6 +45,11 @@ $options = array(
 		'label'	=> __( 'Add social buttons from "View -> Customize -> Contacts -> Socials" to this slider?', 'mebel-laim' )
 	),
 
+	'is_autoplay'	=> array(
+		'type'	=> 'switch',
+		'label'	=> __( 'Auto play slider?', 'mebel-laim' )
+	),
+
 	'slides_per_screen'	=> array(
     	'type'	=> 'text',
     	'label'	=> __( 'Slides Per Screen', 'mebel-laim' ),

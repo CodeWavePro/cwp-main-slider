@@ -1,6 +1,10 @@
 $brand: #58c800;
 $white: #f9f9f9;
+$text: #323232;
 
+/**
+ *  Main slider wrapper.
+ */
 .cwp-slider {
     position: absolute;
     top: 0;
@@ -9,32 +13,35 @@ $white: #f9f9f9;
     height: 100%;
     z-index: 5;
 
+    /**
+     *  Owl Carousel 2 restyling in it.
+     */
     &.owl-theme {
         .owl-nav {
             margin-top: 0;
             width: 1140px;
             position: absolute;
-            bottom: 100px;
+            bottom: 200px;
             left: 50%;
             margin-left: -570px;
             text-align: left;
 
             .owl-prev,
             .owl-next {
-                color: #a4a4a4;
+                color: $text;
                 font-size: 18px;
-                background-color: $white;
-                padding: 6px 12px !important;
+                background-color: transparent;
+                padding: 0 !important;
                 margin: 0;
 
                 &:hover {
-                    background-color: $brand;
-                    color: $white
+                    background-color: transparent;
+                    color: $brand
                 }
             }
 
             .owl-prev {
-                margin-right: 15px
+                margin-right: 30px
             }
         }
     }
@@ -47,6 +54,9 @@ $white: #f9f9f9;
         }
     }
 
+    /**
+     *  Single slide.
+     */
     .cwp-slide {
         height: inherit;
         background-size: cover;
@@ -58,28 +68,66 @@ $white: #f9f9f9;
     }
 }
 
+/**
+ *  Slide image and its wrapper.
+ */
+.cwp-slide-image-wrapper {
+    position: absolute;
+    top: 200px;
+    right: 15px;
+    width: 570px
+}
+
+.cwp-slide__image {
+    position: relative;
+    width: 100%;
+    height: auto
+}
+
+/**
+ *  Slide text wrapper.
+ */
 .cwp-slide-text {
     position: relative;
     top: 400px;
-    color: $white;
-    max-width: 800px
+    color: $white
 }
 
+/**
+ *  Slide title.
+ */
 .cwp-slide-text__header {
+    color: $text;
     font-size: 60px;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    max-width: 800px;
+    text-shadow: 2px 0 5px rgba(0, 0, 0, 0.35)
 }
 
+/**
+ *  Slide description.
+ */
+.cwp-slide-text__description {
+    color: #b5b5b5;
+    max-width: 500px;
+    animation-delay: 500ms
+}
+
+/**
+ *  Slide social icons and links.
+ */
 .cwp-slide-icons {
     position: relative;
     margin-top: 80px;
+    max-width: 700px;
+    animation-delay: 1000ms;
 
     &::before {
         content: '';
         position: absolute;
         top: -38px;
         left: 0;
-        background-color: $brand;
+        background-color: $text;
         width: 50%;
         height: 1px
     }
@@ -96,7 +144,7 @@ $white: #f9f9f9;
 }
 
 .cwp-slide-icon__link {
-    color: $white;
+    color: #b5b5b5;
 
     &:hover,
     &:active,

@@ -5,6 +5,7 @@ if ( !defined( 'FW' ) ) {
 
 $slides_per_screen = ( isset( $atts['slides_per_screen'] ) && $atts['slides_per_screen'] ) ? $atts['slides_per_screen'] : 1;
 $timer = ( isset( $atts['timer'] ) && $atts['timer'] ) ? $atts['timer'] : 7;
+$is_autoplay = ( isset( $atts['is_autoplay'] ) && ( $atts['is_autoplay'] == 1 ) ) ? 'true' : 'false';
 $timer *= 1000; // Seconds to miliseconds for JS.
 
 switch ( $atts['effect'] ) {
@@ -39,7 +40,11 @@ switch ( $atts['is_overlay'] ) {
 
 if ( isset( $atts['slider'] ) && $atts['slider'] ) {
 	?>
-	<div class = "cwp-slider owl-carousel owl-theme" data-slides = "<?php esc_attr_e( $slides_per_screen ) ?>" data-effect = "<?php esc_attr_e( $effect ) ?>" data-timer = "<?php esc_attr_e( $timer ) ?>">
+	<div class = "cwp-slider owl-carousel owl-theme"
+		data-autoplay = "<?php esc_attr_e( $is_autoplay ) ?>"
+		data-slides = "<?php esc_attr_e( $slides_per_screen ) ?>"
+		data-effect = "<?php esc_attr_e( $effect ) ?>"
+		data-timer = "<?php esc_attr_e( $timer ) ?>">
 
 		<?php
 		foreach ( $atts['slider'] as $slide ) {
@@ -48,25 +53,29 @@ if ( isset( $atts['slider'] ) && $atts['slider'] ) {
 			$description = ( isset( $slide['description'] ) && $slide['description'] ) ? $slide['description'] : '' ;
 			?>
 
-			<div class = "cwp-slide" style = "background-image: url(<?php esc_attr_e( $image ) ?>)">
+			<div class = "cwp-slide">
 				<div class = "section-overlay" style = "background-color:<?php esc_attr_e( $overlay_color )?>;opacity:<?php esc_attr_e( $overlay_opacity )?>"></div>
 
 				<div class = "fw-container">
 					<div class = "fw-row">
 						<div class = "fw-col-xs-12">
+							<div class = "cwp-slide-image-wrapper">
+								<img class = "cwp-slide__image animated" src = "<?php esc_attr_e( $image ) ?>" />
+							</div>
+
 							<div class = "cwp-slide-text">
-					 			<h2 class = "cwp-slide-text__header">
+					 			<h2 class = "cwp-slide-text__header animated">
 					 				<?php esc_html_e( $title ) ?>
 					 			</h2>
 
-					 			<div class = "cwp-slide-text__description">
+					 			<div class = "cwp-slide-text__description animated">
 					 				<?php _e( $description ) ?>
 					 			</div>
 
 					 			<?php
 					 			if ( ( $atts['is_socials'] == 1 ) && fw_get_db_customizer_option( 'socials' ) ) {
 					 				?>
-					 				<ul class = "cwp-slide-icons">
+					 				<ul class = "cwp-slide-icons animated">
 					 					<?php
 					 					foreach ( fw_get_db_customizer_option( 'socials' ) as $soc ) {
 					 						$fa_class = ( isset( $soc['icon'] ) && $soc['icon'] ) ? $soc['icon'] : '';
@@ -81,7 +90,7 @@ if ( isset( $atts['slider'] ) && $atts['slider'] ) {
 					 						<?php
 					 					}
 					 					?>
-									</ul>
+									</ul><!-- .cwp-slide-icons -->
 					 				<?php
 					 			}
 					 			?>
