@@ -3,8 +3,6 @@ if ( !defined( 'FW' ) ) {
 	die( 'Forbidden' );
 }
 
-// OLOLO just testing!!!!!!
-
 $slides_per_screen = ( isset( $atts['slides_per_screen'] ) && $atts['slides_per_screen'] ) ? $atts['slides_per_screen'] : 1;
 $timer = ( isset( $atts['timer'] ) && $atts['timer'] ) ? $atts['timer'] : 7;
 $is_autoplay = ( isset( $atts['is_autoplay'] ) && ( $atts['is_autoplay'] == 1 ) ) ? 'true' : 'false';
@@ -42,6 +40,9 @@ switch ( $atts['is_overlay'] ) {
 
 if ( isset( $atts['slider'] ) && $atts['slider'] ) {
 	?>
+	<!-- For testing! -->
+	<span style = "display: none"></span>
+	<!-- /For testing! -->
 	<div class = "cwp-slider owl-carousel owl-theme"
 		data-autoplay = "<?php esc_attr_e( $is_autoplay ) ?>"
 		data-slides = "<?php esc_attr_e( $slides_per_screen ) ?>"
