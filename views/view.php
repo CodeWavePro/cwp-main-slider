@@ -26,8 +26,8 @@ switch ( $atts['effect'] ) {
 		break;
 }
 
-switch ( $atts['is_overlay'] ) {
-	case true:
+switch ( $atts['is_overlay']['choice'] ) {
+	case 'enable':
 		$overlay_color = ( isset( $atts['overlay_color'] ) && $atts['overlay_color'] ) ? $atts['overlay_color'] : '#000';
 		$overlay_opacity = ( isset( $atts['overlay_opacity'] ) && $atts['overlay_opacity'] ) ? $atts['overlay_opacity'] : 0.5;
 		break;

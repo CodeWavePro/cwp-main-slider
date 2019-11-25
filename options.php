@@ -78,25 +78,47 @@ $options = array(
 	),
 
     'is_overlay'	=> array(
-		'type'	=> 'switch',
-		'label'	=> __( 'Add overlay to slider?', 'mebel-laim' )
-	),
+		'type'	=> 'multi-picker',
+		'label' => false,
+		'desc'  => false,
+		'value' => array(
+			'choice'	=> 'enable'
+		),
 
-	'overlay_color'	=> array(
-		'type'  => 'color-picker',
-		'label' => __( 'Overlay Color', 'mebel-laim' ),
-		'desc'  => __( 'Please select color or write its value in HEX', 'mebel-laim' )
-	),
+		'picker'	=> array(
+			'choice'	=> array(
+				'type'		=> 'select',
+				'label'		=> esc_html__( 'Enable Overlay?', 'mebel-laim' ),
+				'desc'		=> esc_html__( 'Please choose if overlay is enabled', 'mebel-laim' ),
+				'choices'	=> array(
+					'enable'	=> esc_html__( 'Enable', 'mebel-laim' ),
+					'disable'	=> esc_html__( 'Disable', 'mebel-laim')
+				)
+			),
+		),
 
-	'overlay_opacity'	=> array(
-	    'type'			=> 'slider',
-	    'label'			=> __( 'Overlay Opacity', 'mebel-laim' ),
-	    'desc'			=> __( 'Please select an opacity of overlay (0 - min color, 1 - max color)', 'mebel-laim' ),
-	    'value'			=> 0.5,
-	    'properties'	=> array(
-	        'min'	=> 0,
-	        'max'	=> 1,
-	        'step'	=> 0.05
-	    )
+		'choices'	=> array(
+			'enable'		=> array(
+				'overlay_color'	=> array(
+					'type'  => 'color-picker',
+					'label' => __( 'Overlay Color', 'mebel-laim' ),
+					'desc'  => __( 'Please select color or write its value in HEX', 'mebel-laim' )
+				),
+
+				'overlay_opacity'	=> array(
+				    'type'			=> 'slider',
+				    'label'			=> __( 'Overlay Opacity', 'mebel-laim' ),
+				    'desc'			=> __( 'Please select an opacity of overlay (0 - min color, 1 - max color)', 'mebel-laim' ),
+				    'value'			=> 0.5,
+				    'properties'	=> array(
+				        'min'	=> 0,
+				        'max'	=> 1,
+				        'step'	=> 0.05
+				    )
+				)
+			),
+			'disable'	=> array()
+		),
+		'show_borders'	=> false
 	)
 );
