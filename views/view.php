@@ -57,12 +57,12 @@ if ( isset( $atts['slider'] ) && $atts['slider'] ) {
 			?>
 
 			<div class = "cwp-slide">
-				<div class = "section-overlay" style = "background-color:<?php esc_attr_e( $overlay_color )?>;opacity:<?php esc_attr_e( $overlay_opacity )?>"></div>
+				<div class = "section-overlay" style = "background-color:<?php esc_attr_e( $overlay_color )?>;opacity:<?php esc_attr_e( $overlay_opacity ) ?>"></div>
 
 				<div class = "fw-container">
 					<div class = "fw-row">
 						<div class = "fw-col-xs-12">
-							<div class = "cwp-slide-image-wrapper" data-depth = "0.2">
+							<div class = "cwp-slide-image-wrapper">
 								<img class = "cwp-slide__image animated" src = "<?php esc_attr_e( $image ) ?>" />
 							</div>
 
