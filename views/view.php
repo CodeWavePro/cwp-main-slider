@@ -44,10 +44,10 @@ if ( isset( $atts['slider'] ) && $atts['slider'] ) {
 	<span style = "display: none"></span>
 	<!-- /For testing! -->
 	<div class = "cwp-slider owl-carousel owl-theme"
-		data-autoplay = "<?php esc_attr_e( $is_autoplay ) ?>"
-		data-slides = "<?php esc_attr_e( $slides_per_screen ) ?>"
-		data-effect = "<?php esc_attr_e( $effect ) ?>"
-		data-timer = "<?php esc_attr_e( $timer ) ?>">
+		data-autoplay = "<?php echo esc_attr( $is_autoplay ) ?>"
+		data-slides = "<?php echo esc_attr( $slides_per_screen ) ?>"
+		data-effect = "<?php echo esc_attr( $effect ) ?>"
+		data-timer = "<?php echo esc_attr( $timer ) ?>">
 
 		<?php
 		foreach ( $atts['slider'] as $slide ) {
@@ -56,23 +56,28 @@ if ( isset( $atts['slider'] ) && $atts['slider'] ) {
 			$description = ( isset( $slide['description'] ) && $slide['description'] ) ? $slide['description'] : '' ;
 			?>
 
+			<!-- Single slide. -->
 			<div class = "cwp-slide">
-				<div class = "section-overlay" style = "background-color:<?php esc_attr_e( $overlay_color )?>;opacity:<?php esc_attr_e( $overlay_opacity ) ?>"></div>
+				<!-- Overlay block with its color and opacity from options.php file. -->
+				<div class = "section-overlay"
+					 style = "background-color: <?php echo esc_attr( $overlay_color ) ?>;
+							  opacity: <?php echo esc_attr( $overlay_opacity ) ?>">
+				</div>
 
 				<div class = "fw-container">
 					<div class = "fw-row">
 						<div class = "fw-col-xs-12">
 							<div class = "cwp-slide-image-wrapper">
-								<img class = "cwp-slide__image animated" src = "<?php esc_attr_e( $image ) ?>" />
+								<img class = "cwp-slide__image animated" src = "<?php echo esc_url( $image ) ?>" />
 							</div>
 
 							<div class = "cwp-slide-text">
 					 			<h2 class = "cwp-slide-text__header animated">
-					 				<?php esc_html_e( $title ) ?>
+					 				<?php printf( esc_html__( '%s', 'mebel-laim' ), $title ) ?>
 					 			</h2>
 
 					 			<div class = "cwp-slide-text__description animated">
-					 				<?php _e( $description ) ?>
+					 				<?php printf( esc_html__( '%s', 'mebel-laim' ), $description ) ?>
 					 			</div>
 
 					 			<?php
@@ -86,8 +91,8 @@ if ( isset( $atts['slider'] ) && $atts['slider'] ) {
 					 						$is_new_tab = ( isset( $soc['is_new_tab'] ) && ( $soc['is_new_tab'] === true ) ) ? '_blank' : '';
 					 						?>
 					 						<li class = "cwp-slide-icon">
-												<a class = "cwp-slide-icon__link" href = "<?php esc_attr_e( $link ) ?>" target = "<?php esc_attr_e( $is_new_tab ) ?>">
-													<i class = "cwp-slide-icon__fa <?php esc_attr_e( $fa_class ) ?>"></i>
+												<a class = "cwp-slide-icon__link" href = "<?php echo esc_url( $link ) ?>" target = "<?php echo esc_attr( $is_new_tab ) ?>">
+													<i class = "cwp-slide-icon__fa <?php echo esc_attr( $fa_class ) ?>"></i>
 												</a>
 											</li>
 					 						<?php
