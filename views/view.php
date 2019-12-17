@@ -40,9 +40,6 @@ switch ( $atts['is_overlay']['choice'] ) {
 
 if ( isset( $atts['slider'] ) && $atts['slider'] ) {
 	?>
-	<!-- For testing! -->
-	<span style = "display: none"></span>
-	<!-- /For testing! -->
 	<div class = "cwp-slider owl-carousel owl-theme"
 		data-autoplay = "<?php echo esc_attr( $is_autoplay ) ?>"
 		data-slides = "<?php echo esc_attr( $slides_per_screen ) ?>"
