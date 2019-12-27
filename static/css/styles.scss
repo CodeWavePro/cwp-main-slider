@@ -21,27 +21,55 @@ $text: #323232;
             margin-top: 0;
             width: 1140px;
             position: absolute;
-            bottom: 200px;
+            bottom: 150px;
             left: 50%;
             margin-left: -570px;
             text-align: left;
 
             .owl-prev,
             .owl-next {
-                color: $text;
-                font-size: 18px;
                 background-color: transparent;
                 padding: 0 !important;
                 margin: 0;
+                height: 40px;
 
                 &:hover {
                     background-color: transparent;
-                    color: $brand
+
+                    .cwp-line {
+                        background-color: $brand
+                    }
                 }
             }
 
             .owl-prev {
-                margin-right: 30px
+                margin-right: 30px;
+
+                .cwp-line {
+                    position: relative;
+                    transform: rotate(-45deg);
+                    top: -10px
+                }
+
+                .cwp-line__cross {
+                    position: relative;
+                    transform: rotate(45deg);
+                    top: 10px
+                }
+            }
+
+            .owl-next {
+                .cwp-line {
+                    position: relative;
+                    transform: rotate(45deg);
+                    top: -10px
+                }
+
+                .cwp-line__cross {
+                    position: relative;
+                    transform: rotate(-45deg);
+                    top: 10px
+                }
             }
         }
     }
@@ -154,6 +182,19 @@ $text: #323232;
     &:visited {
         color: #b5b5b5
     }
+}
+
+.cwp-line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: $text;
+    transition: all ease-in-out 300ms
+}
+
+.cwp-line__cross {
+    transform: rotate(90deg);
+    margin-top: -2px
 }
 
 /*** Media queries ***/

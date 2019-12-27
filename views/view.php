@@ -83,13 +83,13 @@ if ( isset( $atts['slider'] ) && $atts['slider'] ) {
 					 				<ul class = "cwp-slide-icons animated">
 					 					<?php
 					 					foreach ( fw_get_db_customizer_option( 'socials' ) as $soc ) {
-					 						$fa_class = ( isset( $soc['icon'] ) && $soc['icon'] ) ? $soc['icon'] : '';
+					 						$icon = ( isset( $soc['icon'] ) && $soc['icon'] ) ? '<i class = "' . esc_attr( $soc['icon']['icon-class'] ) . ' cwp-slide-icon__fa"></i>' : '';
 					 						$link = ( isset( $soc['link'] ) && $soc['link'] ) ? $soc['link'] : '#';
 					 						$is_new_tab = ( isset( $soc['is_new_tab'] ) && ( $soc['is_new_tab'] === true ) ) ? '_blank' : '';
 					 						?>
 					 						<li class = "cwp-slide-icon">
 												<a class = "cwp-slide-icon__link" href = "<?php echo esc_url( $link ) ?>" target = "<?php echo esc_attr( $is_new_tab ) ?>">
-													<i class = "cwp-slide-icon__fa <?php echo esc_attr( $fa_class ) ?>"></i>
+													<?php echo $icon ?>
 												</a>
 											</li>
 					 						<?php

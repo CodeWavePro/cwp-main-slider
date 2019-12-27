@@ -26,7 +26,7 @@ jQuery( function( $ ) {
 		    	loop 				: true,
 			    margin 				: 0,
 			    nav 				: true,
-			    navText				: ['<i class="fas fa-chevron-left"></i>','<i class="fas fa-chevron-right"></i>'],
+			    navText				: ['<span class = "cwp-line"></span><span class = "cwp-line cwp-line__cross"></span>','<span class = "cwp-line"></span><span class = "cwp-line cwp-line__cross"></span>'],
 			    dots 				: false,
 			    autoplay 			: isAutoplay,
 			    autoplayHoverPause 	: false,
