@@ -18,17 +18,15 @@ jQuery( function( $ ) {
 			sliderEffect = owl.attr( 'data-effect' );	// Sliding effect in data-attribute 'data-effect' of slider wrapper.
 			isAutoplay = owl.attr( 'data-autoplay' );	// Autoplay or not slider in data-attribute 'data-autoplay' of slider wrapper.
 
-			isAutoplay = ( isAutoplay === 'false' ) ? false : true;
-
 			owl.owlCarousel( {	// Slider initialization.
 				items 				: sliderItems,
 		    	animateOut 			: sliderEffect,
 		    	loop 				: true,
 			    margin 				: 0,
 			    nav 				: true,
-			    navText				: ['<span class = "cwp-line"></span><span class = "cwp-line cwp-line__cross"></span>','<span class = "cwp-line"></span><span class = "cwp-line cwp-line__cross"></span>'],
+			    navText				: ['<span class = "product-actions__line"></span><span class = "product-actions__line product-actions__line_cross"></span>','<span class = "product-actions__line"></span><span class = "product-actions__line product-actions__line_cross"></span>'],
 			    dots 				: false,
-			    autoplay 			: isAutoplay,
+			    autoplay 			: ( isAutoplay === 'false' ) ? false : true,
 			    autoplayHoverPause 	: false,
 			    lazyLoad			: true,
 			    autoplayTimeout		: sliderTimer
